@@ -1,0 +1,182 @@
+﻿<UserControl x:Class="Zenith.Client.Shared.Controls.ErrorReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Zenith.Client.Shared.Controls"
+             mc:Ignorable="d" 
+             xmlns:SharedStyles="clr-namespace:Zenith.Client.Shared.Styles"
+             xmlns:SharedConverters="clr-namespace:Zenith.Client.Shared.Converters"
+             xmlns:SharedControls="clr-namespace:Zenith.Client.Shared.Controls"
+             Height="Auto" Width="Auto">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <SharedConverters:BooleanToVisibilityConverter x:Key="VisibilityConverter" />
+
+            <DataTemplate x:Key="ListItemTemplate">
+                <DockPanel>
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="5,5,5,5"/>
+                    <TextBlock Text="{Binding Value}" TextWrapping="WrapWithOverflow" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5"/>
+                </DockPanel>
+            </DataTemplate>
+
+            <Style x:Key="ListStyle" TargetType="ListBoxItem">
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBoxItem">
+                            <StackPanel Orientation="Vertical">
+                                <Border Name="ItemBorder" Background="White" BorderBrush="Transparent" BorderThickness="0" Margin="-2">
+                                    <ContentPresenter />
+                                </Border>
+                                <Separator/>
+                            </StackPanel>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="ItemBorder" Property="Background" Value="LightGray" />
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsMouseOver" Value="True" />
+                                        <Condition Property="IsSelected" Value="False" />
+                                    </MultiTrigger.Conditions>
+                                    <Setter TargetName="ItemBorder" Property="Background" Value="LightGray" />
+                                </MultiTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="White"
+              HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Border Name="InstructionText"
+                    Margin="10">
+                <TextBlock Text="There was an unexpected error during application runtime.There was an unexpected error during application runtime.There was an unexpected error during application runtime.There was an unexpected error during application runtime." 
+                           TextWrapping="WrapWithOverflow" 
+                           FontSize="20" 
+                           FontWeight="Bold"
+                           Name="Text"
+                           Height="Auto"/>
+            </Border>
+            <Border HorizontalAlignment="Right">
+                <Button Style="{StaticResource FlatButtonStyle}"
+                                            Margin="2,2,2,2"
+                                            SharedStyles:StyleProperties.MouseOverBorderBrush="DarkGray"
+                                            HorizontalAlignment="Stretch" 
+                                            VerticalAlignment="Top">
+                    <Rectangle Fill="Black" Height="16" Width="16" Margin="2">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Visual="{StaticResource appbar_page_copy}" Stretch="Uniform" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Button>
+            </Border>
+            <Separator Visibility="{Binding ElementName=MoreLessButton, Path=IsChecked, Converter={StaticResource VisibilityConverter}}"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" VerticalAlignment="Center" 
+                Visibility="{Binding ElementName=MoreLessButton, Path=IsChecked, Converter={StaticResource VisibilityConverter}}" 
+                Name="Content">
+            <TabControl Style="{StaticResource CenteredTabsControlStyle}">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem" 
+                           BasedOn="{StaticResource AzureTabItem}"/>
+                </TabControl.Resources>
+                <TabItem Header="Summary">
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="10">
+                        <StackPanel Orientation="Vertical">
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" 
+                                          VerticalScrollBarVisibility="Auto">
+                                <ListBox ItemsSource="{Binding Items}" 
+                                         ItemContainerStyle="{StaticResource ListStyle}"
+                                         ItemTemplate="{StaticResource ListItemTemplate}"
+                                         HorizontalContentAlignment="Stretch"
+                                         Margin="10,10,10,10"
+                                         MaxHeight="500"/>
+                            </ScrollViewer >
+                            <Border HorizontalAlignment="Right">
+                                <Button Style="{StaticResource FlatButtonStyle}"
+                                            Margin="2,2,2,2"
+                                            SharedStyles:StyleProperties.MouseOverBorderBrush="DarkGray"
+                                            HorizontalAlignment="Stretch" 
+                                            VerticalAlignment="Top">
+                                    <Rectangle Fill="Black" Height="16" Width="16" Margin="2">
+                                        <Rectangle.OpacityMask>
+                                            <VisualBrush Visual="{StaticResource appbar_page_copy}" Stretch="Uniform" />
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                </Button>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </TabItem>
+                <TabItem Header="Error details">
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="10">
+                        <StackPanel Orientation="Vertical">
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" 
+                                          VerticalScrollBarVisibility="Auto">
+                                <TextBlock Text="{Binding Exception}" TextWrapping="Wrap"
+                                   Margin="10,10,10,10" MaxHeight="500"/>
+                            </ScrollViewer>
+                            <Border HorizontalAlignment="Right">
+                                <Button Style="{StaticResource FlatButtonStyle}"
+                                        Margin="2,2,2,2"
+                                        SharedStyles:StyleProperties.MouseOverBorderBrush="DarkGray"
+                                        HorizontalAlignment="Stretch" 
+                                        VerticalAlignment="Top">
+                                    <Rectangle Fill="Black" Height="16" Width="16" Margin="2">
+                                        <Rectangle.OpacityMask>
+                                            <VisualBrush Visual="{StaticResource appbar_page_copy}" Stretch="Uniform" />
+                                        </Rectangle.OpacityMask>
+                                    </Rectangle>
+                                </Button>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </TabItem>
+            </TabControl>
+        </Border>
+
+        <Border Grid.Row="2" 
+                Background="LightGray" 
+                VerticalAlignment="Bottom" 
+                Name="Footer">
+            <DockPanel>
+                <ToggleButton Style="{StaticResource MoreLessButtonStyle}" 
+                              BorderBrush="Transparent"
+                              SharedStyles:StyleProperties.MouseOverBorderBrush="DarkGray" 
+                              Margin="5"
+                              Name="MoreLessButton"/>
+                <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Style="{StaticResource FlatButtonStyle}" 
+                            Content="Send report" 
+                            Margin="2" 
+                            MinWidth="80" 
+                            BorderBrush="DarkGray" 
+                            BorderThickness="1" 
+                            Background="LightGray"
+                            SharedStyles:StyleProperties.MouseOverBackgroundBrush="WhiteSmoke"/>
+                    <Button Style="{StaticResource FlatButtonStyle}" 
+                            Content="Close" 
+                            Margin="2" 
+                            MinWidth="80" 
+                            BorderBrush="DarkGray" 
+                            BorderThickness="1" 
+                            Background="LightGray"
+                            SharedStyles:StyleProperties.MouseOverBackgroundBrush="WhiteSmoke"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35084642-D9A0-4B9E-9216-8E42F52F49F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zenith.Client.Shared</RootNamespace>
+    <AssemblyName>Zenith.Client.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=1.4.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Network\packages\MahApps.Metro.1.4.0-ALPHA007\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Network\packages\MahApps.Metro.1.4.0-ALPHA007\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CommandParameters.cs" />
+    <Compile Include="Commands\ParameterizedRelayCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="ControlHelpers\Behaviors.cs" />
+    <Compile Include="ControlHelpers\CueBannerService.cs" />
+    <Compile Include="ControlHelpers\GridLengthAnimation.cs" />
+    <Compile Include="ControlHelpers\PageableCollection.cs" />
+    <Compile Include="ControlHelpers\SwitchBinding.cs" />
+    <Compile Include="Controls\Adorners\AdornedControl.cs" />
+    <Compile Include="Controls\Adorners\FrameworkElementAdorner.cs" />
+    <Compile Include="Controls\Adorners\ResizingAdorner.cs" />
+    <Compile Include="Controls\AdvancedDataGrid.cs" />
+    <Compile Include="Controls\AnimatedDropdownButton.cs" />
+    <Compile Include="Controls\EditableTextBlock.cs" />
+    <Compile Include="Controls\DataListContainer.cs" />
+    <Compile Include="Controls\ErrorReport.xaml.cs">
+      <DependentUpon>ErrorReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageContentControl.cs" />
+    <Compile Include="Controls\ThirdParty\FluidProgressBar\FluidProgressBar.xaml.cs" />
+    <Compile Include="Controls\ThirdParty\WPFMath\VisualContainerElement.cs" />
+    <Compile Include="Controls\TitledPanel.cs" />
+    <Compile Include="Converters\EnumToImageConverter.cs" />
+    <Compile Include="Converters\ImageContentConverter.cs" />
+    <Compile Include="Converters\KeyToResourceConverter.cs" />
+    <Compile Include="Converters\MultiplyConverter.cs" />
+    <Compile Include="Converters\PathMarginConverter.cs" />
+    <Compile Include="Converters\SingleResourceToImageConverter.cs" />
+    <Compile Include="Converters\VisibilityToBooleanConverter.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Interfaces\IDialogTarget.cs" />
+    <Compile Include="Interfaces\IModuleInitializer.cs" />
+    <Compile Include="Interfaces\IModulePresenter.cs" />
+    <Compile Include="Interfaces\IPasswordSource.cs" />
+    <Compile Include="Interfaces\IShellCoordinator.cs" />
+    <Compile Include="Interfaces\ModuleMetadata.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Styles\StyleProperties.cs" />
+    <Compile Include="TemplateSelectors\TemplateSelectors.cs" />
+    <Compile Include="Util\Extensions.cs" />
+    <Compile Include="Util\InvertableBool.cs" />
+    <Compile Include="Util\ModuleLoader.cs" />
+    <Compile Include="Util\Reflection.cs" />
+    <Compile Include="Util\StoryboardManager.cs" />
+    <Compile Include="Util\SystemTray.cs" />
+    <Compile Include="Util\ThreadSafeObservableCollection.cs" />
+    <Compile Include="Util\UIHelper.cs" />
+    <Compile Include="ViewsModels\AppUser.cs" />
+    <Compile Include="ViewsModels\ErrorReportViewModel.cs" />
+    <Compile Include="ViewsModels\Segment.cs" />
+    <Compile Include="ViewsModels\ExposableViewModelBase.cs" />
+    <Compile Include="ViewsModels\TileElement.cs" />
+    <Compile Include="ViewsModels\ViewModelBase.cs" />
+    <None Include="packages.config" />
+    <None Include="Windows\MetroDialog.xaml.cs">
+      <DependentUpon>MetroDialog.xaml</DependentUpon>
+    </None>
+    <Compile Include="Windows\PopupWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\ErrorReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ThirdParty\FluidProgressBar\FluidProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\General.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Tabs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Tooltips.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="Windows\MetroDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdParty\WpfMath.csproj">
+      <Project>{010a34f1-1f3e-4528-99b4-95054dd45729}</Project>
+      <Name>WpfMath</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

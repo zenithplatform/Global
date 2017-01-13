@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:SharedStyles="clr-namespace:Zenith.Client.Shared.Styles">
+
+    <Storyboard x:Key="Hide">
+        <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:2" To="0.0"/>
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+            <DiscreteObjectKeyFrame KeyTime="0:0:2" Value="{x:Static Visibility.Hidden}"/>
+        </ObjectAnimationUsingKeyFrames>
+    </Storyboard>
+    
+    <Storyboard x:Key="Show">
+        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{x:Static Visibility.Visible}"/>
+        </ObjectAnimationUsingKeyFrames>
+        <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:5" To="0.75"/>
+    </Storyboard>
+
+    <Style x:Key="HoverRectangleStyle" TargetType="Rectangle">
+        <Setter Property="Fill" Value="{Binding (SharedStyles:StyleProperties.RectangleNormalBrush), RelativeSource={RelativeSource Self}}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=ButtonBase}}" Value="True">
+                <!-- "{Binding (SharedStyles:StyleProperties.RectangleHighlightBrush), RelativeSource={RelativeSource AncestorType=ToggleButton}}" -->
+                <Setter Property="Fill" Value="{Binding (SharedStyles:StyleProperties.RectangleHighlightBrush), RelativeSource={RelativeSource Self}}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

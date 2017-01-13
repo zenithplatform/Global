@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64238876-8C39-4631-8227-F321128B0C5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zenith.Assets</RootNamespace>
+    <AssemblyName>Zenith.Assets</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=1.2.4.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\galaxy.ico" />
+    <None Include="packages.config" />
+    <None Include="Resources\Entypo.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\galaxy_white.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Asteroid-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Asteroid-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Asteroid Filled-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\big_dipper_red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\big_dipper_white.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\City-Telescope-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Comet-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Comet-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Comet Filled-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\copy-16-000000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Galaxy-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Galaxy-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Galaxy Filled-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\help-circled-16-000000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\info-circled-16-000000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\location4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\milky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Moon-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\pin-16-000000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pin_pinned_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pin_unpinned_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Planet-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Planet-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Planet Filled-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rocket-32 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rocket-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rocket Filled-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\science109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Telescope-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Telescope-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\telescope14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\telescope16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chart-bubble.png" />
+    <Content Include="Resources\Entypo-license.txt" />
+    <Content Include="Resources\WindowsIcons-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\IconsNonShared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\MaterialDesignIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
