@@ -64,12 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Zenith.Core.DataProviders\Zenith.Core.DataProviders.csproj">
-      <Project>{37e0ff36-b1b9-4413-9adc-01396a607b27}</Project>
-      <Name>Zenith.Core.DataProviders</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
